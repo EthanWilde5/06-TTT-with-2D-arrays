@@ -29,9 +29,51 @@ For more in the future and more awesomer...
 //Ethan Wilde
 
 
-public class Main {
+
+import java.util.Arrays;
+
+public  class Main {
+  public static final int[][] EMPTY_BOARD = {
+      { -1, -1, -1},
+      { -1, -1, -1},
+      { -1, -1, -1},
+  };
+
+  public static final int[][] DIAGNAL_INCREASING_BOARD = {
+      { 1, 0, 0},
+      { -1, 1, -1},
+      { 0, -1, 1},
+  };
+
+  public static final int[][] DIAGNAL_DECREASING_BOARD = {
+      { 0, 0, 1},
+      { -1, 1, -1},
+      { 1, -1, 0},
+  };
+
+  public static final int[][] VERTICAL_BOARD = {
+    { -1, 1, -1},
+    { 0, 1, 0},
+    { -1, 1, 0},
+  };
+
+  public static final int[][] HORIZONTAL_BOARD = {
+      { -1, 0, -1},
+      { 1, 1, 1},
+      { 0, 0, -1},
+  };
+
+  public static final int[][] TIE_BOARD = {
+      { 0, 1, 0},
+      { 1, 1, 0},
+      { 0, 0, 1},
+  };
+  
   public static void main(String[] args) {
-    new Player();
-    System.out.println("TTT - RAN WITHOUT ERRORS");
+    Game game = new Game(new Player("X"), new Player("O"));
+    game.setBoard(DIAGNAL_INCREASING_BOARD);
+    game.isGameOver();
+
   }
+
 }
