@@ -46,6 +46,8 @@ public class Game {
     return result;
   }
 
+  //Checks vertical win
+
   public int vertical() {
     int winner = -1;
 
@@ -67,6 +69,7 @@ public class Game {
 
     return winner;
   }
+  //Checks horizontal win
 
   public int horizontal() {
     int winner = -1;
@@ -89,7 +92,7 @@ public class Game {
 
     return winner;
   }
-
+//Checks diagonal decrease win
   public int diagonalDecrease() {
     int winner = -1;
     int startingVal = STATE[0][SIZE - 1];
@@ -106,7 +109,7 @@ public class Game {
 
     return winner;
   }
-
+//Checks diagonal increase win
   public int diagonalIncrease() {
     int winner = -1;
 
@@ -125,7 +128,7 @@ public class Game {
 
     return winner;
   }
-
+//If the game is over state if it is a win or tie
   public boolean isGameOver() {
     boolean result = false;
     int winningPlayer = checkForWin();
@@ -139,6 +142,7 @@ public class Game {
     return result;
   }
 
+  //method to decide if it was a tie game
   public boolean isBoardFull() {
     for (int i = 0; i < SIZE; i++) {
       for (int j = 0; j < SIZE; j++) {
